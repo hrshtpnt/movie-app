@@ -1,7 +1,7 @@
 # movie-app
 It is a vanilla JS project. Display movies info and a collection of youtube videos related to that movie
 
-![alt text](https://github.com/hrshtpnt/movie-app/blob/master/capture.jpg?raw=true)
+![alt text](https://raw.githubusercontent.com/hrshtpnt/movie-app/master/blob/capture.jpg)
 
 After downloading the repository.
 
