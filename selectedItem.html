@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./selectedItem.css" />
+    <title>>Movie Database</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="movie-box">
+        <h1 id="original_title" class="margin-left-10"></h1>
+        <div class="inner-container">
+          <img id="poster" alt="movie-poster" height="auto" width="auto" />
+          <div class="padding-left-40">
+            <p>
+              <b>Overview:</b>
+              <span id="overview"></span>
+              <br />
+              Link: <a id="homepage">Home Page</a>
+            </p>
+            <table>
+              <tr>
+                <th>Adult</th>
+                <th>Budget</th>
+                <th>Release Date</th>
+                <th>Status</th>
+                <th>Tagline</th>
+              </tr>
+              <tr>
+                <td id="movieType"></td>
+                <td id="budget"></td>
+                <td id="releaseDate"></td>
+                <td id="status"></td>
+                <td id="tagline"></td>
+              </tr>
+            </table>
+            <h4>Youtube Links:</h4>
+            <div id="youtube"></div>
+          </div>
+        </div>
+      </div>
+      <h2 id="notFound"></h2>
+    </div>
+    <br />
+
+    <script src="./selectedItem.js"></script>
+  </body>
+</html>
