@@ -3,6 +3,8 @@ const Http = new XMLHttpRequest();
 let response = {};
 let videoResponse = {};
 const apiKey = ""; // add the api key here -- without this key the authentication will not work.
+
+// This is a video link with entryNumber and apiKey passed dynamically.
 const videoLink =
   "https://api.themoviedb.org/3/movie/" +
   entryNumber +
@@ -41,21 +43,29 @@ Http.onreadystatechange = (e) => {
     // code to get YOUTUBE urls
     Http.open("GET", videoLink, true);
     Http.send();
+    
+    
     Http.onreadystatechange = (e) => {
       if (Http.readyState == 4 && Http.status == 200) {
         videoResponse = JSON.parse(Http.responseText);
+        
+        // getting each item from the video response
+        // using a map function to iterate over the results each result being the item
+        
         videoResponse.results.map((item) => {
           var frameTag = document.createElement("iframe");
           frameTag.id = item.id;
           frameTag.width = "420";
           frameTag.height = "315";
           frameTag.src = "https://www.youtube.com/embed/" + item.key;
+          // append child to the element with id 'youtube'
           document.getElementById("youtube").appendChild(frameTag);
         });
       }
     };
     //ends here
   } else {
+    // incase the movie data is not found, due to server error or mismatch url, show not found div.
     document.getElementById("movie-box").style.display = "none";
     document.getElementById("notFound").style.display = "block";
     document.getElementById("notFound").innerHTML =
